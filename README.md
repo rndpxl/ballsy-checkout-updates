@@ -1,2 +1,2 @@
 # Shopify App Starter
-Starter for custom shopify apps
+Laravel starter for custom shopify apps
