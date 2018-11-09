@@ -1,2 +1,2 @@
-# credit-key
-Credit Key Private Shopify app for Ryonet
+# Shopify App Starter
+Starter for custom shopify apps
