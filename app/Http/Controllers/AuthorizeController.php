@@ -33,13 +33,23 @@ class AuthorizeController extends Controller
     public function code(Request $r)
     {
 
-        $code = Input::get('code');
         $store_url = Input::get('shop');
+
+        $config = array(
+            'ShopUrl' => $store_url,
+            'ApiKey' => config('shopify.API_KEY'),
+            'SharedSecret' => config('shopify.API_SECRET'),
+        );
+
+        ShopifySDK::config($config);
+
+        $accessToken = AuthHelper::getAccessToken();
+
 
         $storefront = Storefront::firstOrNew([
             'shop_domain' => $store_url
         ]);
-        $storefront->access_token = $code;
+        $storefront->access_token = $accessToken;
 
         $storefront->save();
 
