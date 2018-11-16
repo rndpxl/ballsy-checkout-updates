@@ -35,7 +35,6 @@ class Orders extends Migration
             $table->bigInteger('shopify_order_id')->unsigned();
             $table->json('shopify_order');
             $table->string('customer_email');
-            $table->string('credit_key_order_id');
 
             $table->integer('storefront_id')->unsigned();
             $table->foreign('storefront_id')->references('id')->on('storefronts');

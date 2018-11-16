@@ -6,6 +6,9 @@ Laravel starter for custom shopify apps
 1. add local app url to whitelist
 1. add staging app url to whitelist
 1. Store API_KEY and API_SECRET in .env
+1. setup local database
+1. run `php artisan key:generate`
+1. run `composer install` and `php artisan migrate`
 1. go to /auth?store=<shopify_url>
     1. this will make an entry in the storefronts table with the access_token to the store
 
