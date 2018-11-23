@@ -39,26 +39,53 @@
                 </div>
                 <div>
                     <div class="storefront-card-social-buttons-component ember-view">
-                        {{--<div class="social-buttons-container">--}}
-                            {{--<div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1023="1023">--}}
-                                {{--<i class="icon fab fa-facebook-f"></i>--}}
-                            {{--</div>--}}
 
-                            {{--<div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1030="1030">--}}
-                                {{--<i class="icon fab fa-twitter"></i>--}}
-                            {{--</div>--}}
-
-                            {{--<div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1037="1037">--}}
-                                {{--<i class="icon far fa-envelope"></i>--}}
-                            {{--</div>--}}
-
-                            {{--<!---->--}}
-                        {{--</div>--}}
                         <div id="share" class="social-buttons-container">
 
                         </div>
                     </div>
                 </div>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<div class="micromodal micromodal-slide" id="modal-signup" aria-hidden="true">
+    <div class="micromodal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <header class="micromodal__header">
+                <h2 class="micromodal__title" id="modal-1-title">
+                    Sign up to start earning rewards!
+                </h2>
+                <button class="micromodal__close" aria-label="Close modal" data-micromodal-close></button>
+            </header>
+            <main class="micromodal__content" id="modal-1-content">
+                <form method="post" action="/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
+                    <input name="store" type="hidden" value="ball-wash.myshopify.com"/>
+
+                    <div class="errors">
+
+                    </div>
+
+                    <div id="email" class="clearfix large_form">
+                        <label for="email" class="login">Email</label>
+                        <input type="email" value="" name="customer[email]" id="email" class="large" size="30">
+                    </div>
+
+                    <div id="password" class="clearfix large_form">
+                        <label for="password" class="login">Password</label>
+                        <input type="password" value="" name="customer[password]" id="password" class="large password" size="30">
+                    </div>
+
+                    <div class="action_bottom">
+                        <input class="btn action_button" type="submit" value="Sign Up">
+                    </div>
+
+                </form>
+
+            </main>
+            <footer class="micromodal__footer">
+
             </footer>
         </div>
     </div>

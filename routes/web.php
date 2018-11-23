@@ -17,3 +17,14 @@ Route::get('/', 'DashboardController@grid')
 
 Route::get('/auth', 'AuthorizeController@auth');
 Route::get('/code', 'AuthorizeController@code');
+
+$middlewareRoutes = [];
+if (env('APP_ENV') !== 'local')
+{
+    $middlewareRoutes[] = 'throttle:5,1';
+}
+
+Route::middleware($middlewareRoutes)->group(function()
+{
+    Route::post('/customer-signup', 'CustomerController@signup');
+});

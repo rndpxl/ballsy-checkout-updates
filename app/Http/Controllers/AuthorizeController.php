@@ -23,7 +23,7 @@ class AuthorizeController extends Controller
 
         ShopifySDK::config($config);
 
-        $scopes = [ 'write_orders', 'write_customers' ];
+        $scopes = [ 'write_customers', 'read_checkouts', 'write_script_tags' ];
 
         AuthHelper::createAuthRequest($scopes, config('app.url') . '/code');
 

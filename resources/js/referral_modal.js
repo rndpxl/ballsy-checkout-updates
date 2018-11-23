@@ -1,6 +1,12 @@
 
+let API_URL = process.env.APP_URL || 'http://localhost:8000';
+
 class ReferralModal {
-    static init(referral_url) {
+    static showReferral(referral_url) {
+        MicroModal.init({
+            awaitCloseAnimation: true
+        });
+
         $("#share").jsSocials({
             showLabel: false,
             showCount: false,
@@ -10,7 +16,10 @@ class ReferralModal {
             shares: [{share: "facebook", logo: 'fab fa-facebook-f'}, {share: "twitter", logo: "fab fa-twitter"},{share:"email", logo: 'far fa-envelope'}]
         });
 
+        const $modal = $('#modal-1.micromodal');
 
+        $modal.find('.copyable-text').html(referral_url);
+        $modal.find('.copy-btn').data('clipboard-text', referral_url);
 
         $(document).on('click', '.copy-btn', (e) => {
             const text = $(e.target).data('clipboard-text');
@@ -24,11 +33,50 @@ class ReferralModal {
         });
 
 
+
+        MicroModal.show('modal-1');
+    }
+
+    static showSignup(first_name, last_name, email, referral_url){
         MicroModal.init({
             awaitCloseAnimation: true
         });
-        MicroModal.show('modal-1');
+
+        const $modal = $('#modal-signup');
+
+        $modal.find('.copyable-text').html(referral_url);
+        $modal.find('.copy-btn').data('clipboard-text', referral_url);
+
+
+        const $form = $modal.find('#create_customer');
+        $modal.find('#create_customer').on('submit', (e) => {
+            e.preventDefault();
+
+            $.post({
+                url: API_URL + "/customer-signup",
+                data: $form.serialize(),
+                success: (result) => {
+                    console.log(result)
+                    if(!result.status){
+                        $modal.find('.errors').html(result.message);
+                    } else {
+                        MicroModal.close('#modal-signup');
+
+                        ReferralModal.showReferral(referral_url);
+
+                    }
+                },
+                error: (error) => {
+
+                }
+            })
+        });
+
+
+        MicroModal.show('modal-signup');
     }
+
+
 
     static copyTextToClipBoard(target, text){
         const el = document.createElement('textarea');

@@ -19,8 +19,8 @@ class Storefront extends Model
 
     public function getShopifyConnection() {
         return new API([
-            'API_KEY' => $this->api_key,
-            'API_SECRET' => $this->api_secret,
+            'API_KEY' => config('shopify.API_KEY'),
+            'API_SECRET' => config('shopify.API_SECRET'),
             'SHOP_DOMAIN' => $this->shop_domain,
             'ACCESS_TOKEN' => $this->access_token
         ]);
