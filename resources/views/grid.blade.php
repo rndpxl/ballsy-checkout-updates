@@ -19,10 +19,10 @@
 
     <script>
 
-        MicroModal.init({
-            awaitCloseAnimation: true
-        });
-        MicroModal.show('modal-1');
+        const referral_url = "http://i.refs.cc/kdruSz4v?u=1542993278187";
+
+        ReferralModal.init(referral_url);
+
     </script>
 
 @stop

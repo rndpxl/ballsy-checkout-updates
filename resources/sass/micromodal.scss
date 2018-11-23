@@ -1,4 +1,43 @@
 
+/**************************\
+    Demo Animation Style
+  \**************************/
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
+
   /**************************\
   Basic Modal Styles
 \**************************/
@@ -142,44 +181,7 @@
     color: #fff;
   }
 
-  /**************************\
-    Demo Animation Style
-  \**************************/
-  @keyframes mmfadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 
-  @keyframes mmfadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-
-  @keyframes mmslideIn {
-    from {
-      transform: translateY(15%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes mmslideOut {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-10%);
-    }
-  }
 
   &.micromodal-slide {
     display: none;
@@ -284,6 +286,37 @@
         font-size: 24px;
         color: #fff;
 
+      }
+    }
+  }
+
+  .jssocials-shares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .jssocials-share {
+
+      margin: 0 15px;
+
+
+    }
+
+    .jssocials-share-link {
+      border-radius: 50%;
+      background: #060262;
+      height: 45px;
+      width: 45px;
+      vertical-align: middle;
+      line-height: 0;
+      cursor: pointer;
+
+      display: inline-flex;
+
+      i {
+        margin: auto;
+        font-size: 24px;
+        color: #fff;
       }
     }
   }

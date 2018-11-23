@@ -15,6 +15,7 @@ let proxy_url = process.env.APP_URL || 'http://localhost:8000';
  */
 
 mix//.react('resources/js/app.js', 'public/js')
+    .babel('resources/js/referral_modal.js','public/js/referral_modal.js')
     .sass('resources/sass/micromodal.scss', 'public/css/micromodal.css')
    //.sass('resources/sass/app.scss', 'public/css');
 

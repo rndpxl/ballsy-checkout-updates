@@ -38,20 +38,24 @@
                     </div>
                 </div>
                 <div>
-                    <div class="storefront-card-social-buttons-component ember-view"><div class="social-buttons-container">
-                            <div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1023="1023">
-                                <i class="icon fab fa-facebook-f"></i>
-                            </div>
+                    <div class="storefront-card-social-buttons-component ember-view">
+                        {{--<div class="social-buttons-container">--}}
+                            {{--<div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1023="1023">--}}
+                                {{--<i class="icon fab fa-facebook-f"></i>--}}
+                            {{--</div>--}}
 
-                            <div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1030="1030">
-                                <i class="icon fab fa-twitter"></i>
-                            </div>
+                            {{--<div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1030="1030">--}}
+                                {{--<i class="icon fab fa-twitter"></i>--}}
+                            {{--</div>--}}
 
-                            <div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1037="1037">
-                                <i class="icon far fa-envelope"></i>
-                            </div>
+                            {{--<div role="button" class="social-button background-primary" data-ember-action="" data-ember-action-1037="1037">--}}
+                                {{--<i class="icon far fa-envelope"></i>--}}
+                            {{--</div>--}}
 
-                            <!---->
+                            {{--<!---->--}}
+                        {{--</div>--}}
+                        <div id="share" class="social-buttons-container">
+
                         </div>
                     </div>
                 </div>
