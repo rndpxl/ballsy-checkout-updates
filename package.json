@@ -13,6 +13,8 @@
         "axios": "^0.18",
         "babel-preset-react": "^6.23.0",
         "bootstrap": "^4.0.0",
+        "browser-sync": "^2.26.3",
+        "browser-sync-webpack-plugin": "2.0.1",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
@@ -20,5 +22,8 @@
         "popper.js": "^1.12",
         "react": "^16.2.0",
         "react-dom": "^16.2.0"
+    },
+    "dependencies": {
+        "dotenv": "^6.1.0"
     }
 }

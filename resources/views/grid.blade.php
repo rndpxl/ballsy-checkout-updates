@@ -3,12 +3,26 @@
 @section('content')
 
     <div class="container">
-        <h2>Gift Card Sync</h2>
+        <h2>Ballsy Checkout Additions</h2>
 
         <div>
-            <p>This custom shopify application creates an integration with DirectScale for MLM tracking.</p>
+            <p>Additions to the Ballsy Checkout</p>
+        </div>
+
+        <div>
+            <button onclick="MicroModal.show('modal-1')">Show Modal</button>
         </div>
 
     </div>
+
+    @include('partial/modal')
+
+    <script>
+
+        MicroModal.init({
+            awaitCloseAnimation: true
+        });
+        MicroModal.show('modal-1');
+    </script>
 
 @stop

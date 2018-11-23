@@ -1,0 +1,291 @@
+
+  /**************************\
+  Basic Modal Styles
+\**************************/
+
+.micromodal {
+  font-family: Poppins, sans-serif;
+  z-index: 1000000000000;
+
+  .micromodal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .micromodal__container {
+    background-color: #fff;
+    max-width: 600px;
+    max-height: 100vh;
+    border-radius: 1px;
+    box-sizing: border-box;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    //padding: 30px;
+    overflow: visible;
+
+    box-shadow: black -3px 3px 20px;
+  }
+
+  .micromodal__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+
+    .micromodal__close:before {
+      content: "\2715";
+    }
+  }
+
+  .micromodal__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 1.70rem;
+    line-height: 1.25;
+    color: #000;
+    box-sizing: border-box;
+  }
+
+  .micromodal__close {
+    background: transparent;
+    border: 0;
+
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    font-size: 20px;
+    color: white;
+  }
+
+  .micromodal__content {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, .8);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 40px;
+
+    .make-money {
+      font-weight: bold;
+    }
+
+    .refer_img{
+      img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .micromodal__footer {
+    padding: 30px 40px;
+    background: #EEE;
+
+    .referral-link {
+      margin: 0 40px 10px 40px;
+    }
+    
+    .referral-explanation {
+      text-align: center;
+      margin: 30px 20px 40px 20px;
+    }
+  }
+
+  .micromodal__btn {
+    font-size: .875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background-color: #e6e6e6;
+    color: rgba(0, 0, 0, .8);
+    border-radius: .25rem;
+    border-style: none;
+    border-width: 0;
+    cursor: pointer;
+    -webkit-appearance: button;
+    text-transform: none;
+    overflow: visible;
+    line-height: 1.15;
+    margin: 0;
+    will-change: transform;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    transition: -webkit-transform .25s ease-out;
+    transition: transform .25s ease-out;
+    transition: transform .25s ease-out, -webkit-transform .25s ease-out;
+  }
+
+  .micromodal__btn:focus, .modal__btn:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  .micromodal__btn-primary {
+    background-color: #00449e;
+    color: #fff;
+  }
+
+  /**************************\
+    Demo Animation Style
+  \**************************/
+  @keyframes mmfadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes mmfadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes mmslideIn {
+    from {
+      transform: translateY(15%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes mmslideOut {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10%);
+    }
+  }
+
+  &.micromodal-slide {
+    display: none;
+  }
+
+  &.micromodal-slide.is-open {
+    display: block;
+  }
+
+  &.micromodal-slide[aria-hidden="false"] .modal__overlay {
+    animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+
+  &.micromodal-slide[aria-hidden="false"] .modal__container {
+    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+  }
+
+  &.micromodal-slide[aria-hidden="true"] .modal__overlay {
+    animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+
+  &.micromodal-slide[aria-hidden="true"] .modal__container {
+    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+  }
+
+  &.micromodal-slide .modal__container,
+  &.micromodal-slide .modal__overlay {
+    will-change: transform;
+  }
+
+  .copyable-text-component {
+    background-color: #fff;
+    border: 1px solid #E3E3E3;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 15px;
+
+    .text-ellipsis {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .copyable-text {
+      font-family: 'Space Mono';
+      font-size: 14px;
+      color: #2C2A2A;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      -webkit-user-select: all;
+      -moz-user-select: all;
+      user-select: all;
+    }
+
+    .copy-button {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+      font-size: 14px;
+      font-weight: 300;
+      border-radius: 5px;
+      padding: 10px 20px;
+
+      background-color: #060262;
+      border-color: #060262 !important;
+      color: #FFFFFF;
+
+      touch-action: manipulation;
+      -ms-touch-action: manipulation;
+      cursor: pointer;
+    }
+  }
+
+  .social-buttons-container {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+
+    .background-primary {
+      background-color: #060262;
+    }
+
+    .social-button {
+      display: inline-flex;
+      border-radius: 50%;
+      height: 45px;
+      width: 45px;
+      vertical-align: middle;
+      margin: 0 15px;
+      line-height: 0;
+
+      cursor: pointer;
+
+      .icon {
+        margin: auto;
+        font-size: 24px;
+        color: #fff;
+
+      }
+    }
+  }
+
+}

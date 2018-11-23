@@ -1,4 +1,7 @@
 const mix = require('laravel-mix');
+require('dotenv').config();
+
+let proxy_url = process.env.APP_URL || 'http://localhost:8000';
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +14,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.react('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix//.react('resources/js/app.js', 'public/js')
+    .sass('resources/sass/micromodal.scss', 'public/css/micromodal.css')
+   //.sass('resources/sass/app.scss', 'public/css');
+
+mix.browserSync(proxy_url);
