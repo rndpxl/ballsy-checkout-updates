@@ -24,6 +24,7 @@
         "react-dom": "^16.2.0"
     },
     "dependencies": {
-        "dotenv": "^6.1.0"
+        "dotenv": "^6.1.0",
+        "micromodal": "^0.3.2"
     }
 }
