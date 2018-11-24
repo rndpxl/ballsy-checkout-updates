@@ -50,7 +50,7 @@ class AddCustomerTag implements ShouldQueue
 
                     $tags = $customer['tags'];
 
-                    $result = $customer->put([
+                    $result = $shopify->Customer($this->customerId)->put([
                         'tags' => $tags . ", " . $tag
                     ]);
 
