@@ -1,5 +1,4 @@
 import MicroModal from "micromodal";
-import $ from "jquery";
 
 
 let API_URL = process.env.APP_URL || 'http://localhost:8000';
