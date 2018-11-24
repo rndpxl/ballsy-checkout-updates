@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Lib\ShopifyAPI as API;
 use Log;
+use PHPShopify\ShopifySDK;
 
 class Storefront extends Model
 {
@@ -24,6 +25,15 @@ class Storefront extends Model
             'SHOP_DOMAIN' => $this->shop_domain,
             'ACCESS_TOKEN' => $this->access_token
         ]);
+    }
+
+    public function getPHPShopifyConnection(){
+        $config = array(
+            'ShopUrl' => $this->shop_domain,
+            'AccessToken' => $this->access_token
+        );
+
+        return new ShopifySDK($config);
     }
 
     //Orders

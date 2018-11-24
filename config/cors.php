@@ -16,7 +16,7 @@ return [
     'allowedOrigins' => ['https://ballwash.com', 'https://ball-wash.myshopify.com'],
     'allowedOriginsPatterns' => [],
     'allowedHeaders' => ['*'],
-    'allowedMethods' => ['GET'],
+    'allowedMethods' => ['GET','PUT'],
     'exposedHeaders' => [],
     'maxAge' => 0,
 

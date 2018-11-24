@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\AddCustomerTag;
 use App\Models\Storefront;
 use Illuminate\Http\Request;
 
@@ -82,5 +83,21 @@ class CustomerController extends Controller
 
         return response()
             ->json([ 'status' => TRUE ]);
+    }
+
+    public function addTag(Request $r, $customerId, $tag){
+        $origin = request()->headers->get('origin');
+
+        info($origin);
+
+        $storefront = Storefront::first();
+
+        $results = AddCustomerTag::dispatch($storefront->id, $customerId, $tag);
+
+        info($results);
+
+        return response()->json([
+            'success' => true
+        ]);
     }
 }
