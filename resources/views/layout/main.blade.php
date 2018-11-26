@@ -26,6 +26,27 @@
     <script src="/js/referral_modal.js"></script>
 
 
+    <style>
+        .btn {
+            cursor: pointer;
+            display: inline-block;
+            background-color: #060262;
+            background-clip: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border: 1px transparent solid;
+            border-radius: 5px;
+            color: white;
+            font-weight: 500;
+            padding: 1.4em 1.7em;
+            text-align: center;
+            position: relative;
+            -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+        }
+    </style>
 </head>
 <body>
 
