@@ -404,8 +404,24 @@
 }
 
 .micromodal#modal-signup .micromodal__container {
-  width: 987px;
-  max-width: 1000px;
+  width: 85%;
+  max-width: 987px;
+}
+
+.micromodal#modal-signup .micromodal__container > img {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .micromodal#modal-signup .micromodal__container > img {
+    display: block;
+  }
+}
+
+@media (min-width: 1048px) {
+  .micromodal#modal-signup .micromodal__container {
+    width: 65%;
+  }
 }
 
 .micromodal#modal-signup .micromodal__header {
@@ -414,12 +430,39 @@
 }
 
 .micromodal#modal-signup .micromodal__header .micromodal__title {
-  font-size: 48px;
+  font-size: 6vw;
 }
 
 .micromodal#modal-signup .micromodal__header .micromodal__subtitle {
-  margin: 0;
-  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 4vw;
+}
+
+@media (min-width: 500px) {
+  .micromodal#modal-signup .micromodal__header .micromodal__title {
+    font-size: 4.3vw;
+  }
+
+  .micromodal#modal-signup .micromodal__header .micromodal__subtitle {
+    margin: 0;
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .micromodal#modal-signup .micromodal__header .micromodal__title {
+    font-size: 3.5vw;
+  }
+
+  .micromodal#modal-signup .micromodal__header .micromodal__subtitle {
+    margin: 0;
+    font-size: 2.4vw;
+  }
+}
+
+.micromodal#modal-signup .micromodal__footer {
+  display: none;
 }
 
 .micromodal#modal-signup .micromodal__content {
@@ -431,15 +474,34 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin-top: 0;
+  padding-bottom: 50px;
 }
 
 .micromodal#modal-signup .micromodal__content p {
   text-align: center;
-  font-size: 26px;
+  font-size: 3vw;
+}
+
+@media (min-width: 500px) {
+  .micromodal#modal-signup .micromodal__content p {
+    font-size: 2.5vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .micromodal#modal-signup .micromodal__content p {
+    font-size: 2vw;
+  }
 }
 
 .micromodal#modal-signup .micromodal__content form {
-  width: 620px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .micromodal#modal-signup .micromodal__content form {
+    width: 48vw;
+  }
 }
 
 .micromodal#modal-signup .micromodal__content form label,
@@ -476,8 +538,8 @@
 }
 
 .micromodal#modal-signup .micromodal__content form .action_button {
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
-  padding: 10px 20px;
+  padding: 12px 26px;
 }
 

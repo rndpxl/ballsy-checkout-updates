@@ -15,7 +15,7 @@
                     <p>
                         <span class="make-money">Make Money. Refer Friends.</span><br/>
                         <span class="you-get">You get $5. They get $5.</span> <br/>
-                        Help the planet become funk free.
+                        Help the 🌎 become funk free.
                     </p>
                 </div>
 
