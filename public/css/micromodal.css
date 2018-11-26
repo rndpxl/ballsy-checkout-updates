@@ -138,9 +138,7 @@
 }
 
 .micromodal .micromodal__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -157,7 +155,7 @@
 .micromodal .micromodal__title {
   margin-top: 0;
   margin-bottom: 0;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 1.70rem;
   line-height: 1.25;
   color: #000;
@@ -403,5 +401,27 @@
   margin: auto;
   font-size: 24px;
   color: #fff;
+}
+
+.micromodal#modal-signup .micromodal__container {
+  width: 987px;
+  max-width: 1000px;
+}
+
+.micromodal#modal-signup .micromodal__header {
+  text-align: center;
+}
+
+.micromodal#modal-signup .micromodal__header .micromodal__title {
+  font-size: 48px;
+}
+
+.micromodal#modal-signup .micromodal__header .micromodal__subtitle {
+  margin-top: 0;
+  font-size: 36px;
+}
+
+.micromodal#modal-signup .micromodal__content {
+  display: block;
 }
 

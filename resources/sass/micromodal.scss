@@ -75,7 +75,7 @@
   }
 
   .micromodal__header {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     padding: 10px 30px;
@@ -88,7 +88,7 @@
   .micromodal__title {
     margin-top: 0;
     margin-bottom: 0;
-    font-weight: 600;
+    font-weight: bold;
     font-size: 1.70rem;
     line-height: 1.25;
     color: #000;
@@ -321,4 +321,29 @@
     }
   }
 
+  &#modal-signup {
+
+    .micromodal__container {
+      width: 987px;
+      max-width: 1000px;
+    }
+
+    .micromodal__header {
+      text-align: center;
+
+      .micromodal__title {
+        font-size: 48px;
+
+      }
+
+      .micromodal__subtitle {
+        margin-top: 0;
+        font-size: 36px;
+      }
+    }
+
+    .micromodal__content {
+      display: block;
+    }
+  }
 }

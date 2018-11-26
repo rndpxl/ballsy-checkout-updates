@@ -53,15 +53,26 @@
 <div class="micromodal micromodal-slide" id="modal-signup" aria-hidden="true">
     <div class="micromodal__overlay" tabindex="-1" data-micromodal-close>
         <div class="micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <button class="micromodal__close" aria-label="Close modal" data-micromodal-close></button>
+
+            <img src="/img/rewards_header_image.png" />
+
             <header class="micromodal__header">
                 <h2 class="micromodal__title" id="modal-1-title">
-                    Sign up to start earning rewards!
+                    Create a Ballsy rewards account.
                 </h2>
-                <button class="micromodal__close" aria-label="Close modal" data-micromodal-close></button>
+                <h4 class="micromodal__subtitle">
+                    Earn Free Products, Exclusive Discounts & More!
+                </h4>
             </header>
             <main class="micromodal__content" id="modal-1-content">
+
+                <p>To create your account just choose a password.</p>
+
                 <form method="post" action="/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer"><input type="hidden" name="utf8" value="✓">
                     <input name="store" type="hidden" value="ball-wash.myshopify.com"/>
+
+
 
                     <div class="errors">
 
@@ -78,7 +89,7 @@
                     </div>
 
                     <div class="action_bottom">
-                        <input class="btn action_button" type="submit" value="Sign Up">
+                        <input class="btn action_button" type="submit" value="Get Rewarded">
                     </div>
 
                 </form>
