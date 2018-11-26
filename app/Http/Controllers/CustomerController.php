@@ -92,9 +92,7 @@ class CustomerController extends Controller
 
         $storefront = Storefront::first();
 
-        $results = AddCustomerTag::dispatch($storefront->id, $customerId, $tag);
-
-        info($results);
+        AddCustomerTag::dispatch($storefront->id, $customerId, $tag);
 
         return response()->json([
             'success' => true
