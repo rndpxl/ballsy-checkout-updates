@@ -392,6 +392,7 @@
   font-size: 20px;
   border-radius: 0 5px 5px 0;
   padding: 10px 20px;
+  max-width: 100px;
   background-color: #060262;
   border-color: #060262 !important;
   color: #FFFFFF;
@@ -518,6 +519,7 @@
 .micromodal#modal-referral .micromodal__footer p {
   text-align: center;
   font-size: 15px;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 615px) {

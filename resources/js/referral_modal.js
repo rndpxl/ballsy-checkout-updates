@@ -34,8 +34,6 @@ class ReferralModal {
             }, 5000)
         });
 
-
-
         MicroModal.show('modal-referral');
     }
 
