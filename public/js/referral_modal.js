@@ -84,6 +84,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
+var API_URL = 'https://ballsy.blue-hat.tech';
+
 var ReferralModal = function () {
     function ReferralModal() {
         _classCallCheck(this, ReferralModal);
@@ -127,7 +129,7 @@ var ReferralModal = function () {
         }
     }, {
         key: "showSignup",
-        value: function showSignup(email, referral_url, api_url) {
+        value: function showSignup(email, referral_url) {
             __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].init({
                 awaitCloseAnimation: true
             });
@@ -142,9 +144,10 @@ var ReferralModal = function () {
                 e.preventDefault();
 
                 $.post({
-                    url: api_url + "/customer-signup",
+                    url: API_URL + "/customer-signup",
                     data: $form.serialize(),
                     success: function success(result) {
+                        console.log(result);
                         if (!result.status) {
                             $modal.find('.errors').html(result.message);
                         } else {

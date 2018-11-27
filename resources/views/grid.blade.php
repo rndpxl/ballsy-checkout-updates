@@ -27,7 +27,7 @@
 
         ReferralModal.showReferral(referral_url);
 
-        // ReferralModal.showSignup('test@email.com', referral_url);
+        // ReferralModal.showSignup('test@email.com', referral_url, 'https://ballsy.blue-hat.tech');
     </script>
 
 @stop
