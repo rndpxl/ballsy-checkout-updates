@@ -48,11 +48,19 @@ class CustomerController extends Controller
         $error = 'An unknown error has occurred, please try again.';
         // Send Info
         $api = $storefront->getShopifyConnection();
+        $method = 'POST';
+        $url = '/customers.json';
+        $customerId = $r->input($prefix . 'id');
+        if($customerId){
+            $method = 'PUT';
+            $url = '/customers/' . $customerId . '.json';
+        }
+
         try
         {
             $customer = $api->call([
-                'URL' => '/customers.json',
-                'METHOD' => 'POST',
+                'URL' => $url,
+                'METHOD' => $method,
                 'DATA' => [ 'customer' => $customerData ],
                 'ALLDATA' => TRUE,
                 'FAILONERROR' => FALSE
