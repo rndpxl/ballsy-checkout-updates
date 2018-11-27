@@ -95,7 +95,7 @@
 \**************************/
 
 .micromodal {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   z-index: 1000000000000;
 }
 
@@ -400,7 +400,7 @@
   -ms-touch-action: manipulation;
   cursor: pointer;
   height: 100%;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   font-weight: 400;
 }
 
@@ -575,11 +575,11 @@
 
 .micromodal#modal-signup .micromodal__header .micromodal__title {
   font-size: 6vw;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
 }
 
 .micromodal#modal-signup .micromodal__header .micromodal__subtitle {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins;
   margin-top: 10px;
   margin-bottom: 0;
   font-size: 4vw;
