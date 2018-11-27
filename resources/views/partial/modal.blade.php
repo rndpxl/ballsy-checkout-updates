@@ -52,7 +52,7 @@
 <div class="micromodal micromodal-slide" id="modal-signup" aria-hidden="true">
     <div class="micromodal__overlay" tabindex="-1" data-micromodal-close>
         <div class="micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-            <img src="/img/rewards_header_image.png" />
+            <img src="https://ballsy.blue-hat.tech/img/rewards_header_image.png" />
 
             <header class="micromodal__header">
                 <button class="micromodal__close" aria-label="Close modal" data-micromodal-close></button>
