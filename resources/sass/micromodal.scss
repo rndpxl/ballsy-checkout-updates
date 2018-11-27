@@ -43,7 +43,7 @@
 \**************************/
 
 .micromodal {
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   z-index: 1000000000000;
 
   .micromodal__overlay {
@@ -316,7 +316,7 @@
       cursor: pointer;
       height: 100%;
 
-      font-family: Poppins;
+      font-family: Poppins, sans-serif;
       font-weight: 400;
     }
   }
@@ -488,11 +488,11 @@
 
       .micromodal__title {
         font-size: 6vw;
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
       }
 
       .micromodal__subtitle {
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
         margin-top: 10px;
         margin-bottom: 0;
         font-size: 4vw;
