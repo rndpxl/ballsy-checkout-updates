@@ -47,6 +47,8 @@ class ReferralModal {
         $modal.find('.copyable-text').html(referral_url);
         $modal.find('.copy-btn').data('clipboard-text', referral_url);
 
+        $modal.find('[name="customer[email]"]').val(email);
+
 
         const $form = $modal.find('#create_customer');
         $modal.find('#create_customer').on('submit', (e) => {
