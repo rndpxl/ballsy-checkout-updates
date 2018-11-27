@@ -1,8 +1,5 @@
 import MicroModal from "micromodal";
 
-
-let API_URL = 'https://ballsy.blue-hat.tech';
-
 class ReferralModal {
     static showReferral(referral_url) {
         MicroModal.init({
@@ -37,7 +34,7 @@ class ReferralModal {
         MicroModal.show('modal-referral');
     }
 
-    static showSignup(first_name, last_name, email, referral_url){
+    static showSignup(email, referral_url, api_url){
         MicroModal.init({
             awaitCloseAnimation: true
         });
@@ -53,10 +50,9 @@ class ReferralModal {
             e.preventDefault();
 
             $.post({
-                url: API_URL + "/customer-signup",
+                url: api_url + "/customer-signup",
                 data: $form.serialize(),
                 success: (result) => {
-                    console.log(result)
                     if(!result.status){
                         $modal.find('.errors').html(result.message);
                     } else {
