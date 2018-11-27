@@ -74,6 +74,23 @@
     box-shadow: black -3px 3px 20px;
   }
 
+  .micromodal__container {
+    >img {
+      display: none;
+
+      @media(min-width: 500px){
+        display: block;
+      }
+    }
+
+    width: 85%;
+
+    @media (min-width: 1048px){
+      width: 65%;
+    }
+    max-width: 800px;
+  }
+
   .micromodal__header {
     display: block;
     justify-content: center;
@@ -82,6 +99,55 @@
 
     .micromodal__close:before {
       content: "\2715";
+    }
+  }
+
+  .micromodal__header {
+    text-align: center;
+    margin-top: 20px;
+
+    .micromodal__title {
+      font-size: 6vw;
+    }
+
+    .micromodal__subtitle {
+      margin-top: 10px;
+      margin-bottom: 0;
+      font-size: 4vw;
+    }
+
+    @media(min-width: 500px) {
+
+      .micromodal__title {
+        font-size: 4.3vw;
+      }
+
+      .micromodal__subtitle {
+        margin: 0;
+        font-size: 3vw;
+      }
+    }
+
+    @media(min-width: 768px){
+      .micromodal__title {
+        font-size: 3.5vw;
+      }
+
+      .micromodal__subtitle {
+        margin: 0;
+        font-size: 2.4vw;
+      }
+    }
+
+    @media(min-width: 1250px){
+      .micromodal__title {
+        font-size: 35px;
+      }
+
+      .micromodal__subtitle {
+        margin: 0;
+        font-size: 28px;
+      }
     }
   }
 
@@ -121,18 +187,6 @@
     align-items: center;
     justify-content: space-around;
     padding: 0 40px;
-
-    .make-money {
-      font-weight: bold;
-    }
-
-    .refer_img{
-      img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-      }
-    }
   }
 
   .micromodal__footer {
@@ -140,12 +194,9 @@
     background: #EEE;
 
     .referral-link {
+      padding: 0 0 0 15px;
       margin: 0 40px 10px 40px;
-    }
-    
-    .referral-explanation {
-      text-align: center;
-      margin: 30px 20px 40px 20px;
+      height: 60px;
     }
   }
 
@@ -234,8 +285,7 @@
     }
 
     .copyable-text {
-      font-family: 'Space Mono';
-      font-size: 14px;
+      font-size: 20px;
       color: #2C2A2A;
       margin-top: auto;
       margin-bottom: auto;
@@ -252,9 +302,8 @@
       -webkit-user-select: none;
       -moz-user-select: none;
       user-select: none;
-      font-size: 14px;
-      font-weight: 300;
-      border-radius: 5px;
+      font-size: 20px;
+      border-radius: 0 5px 5px 0;
       padding: 10px 20px;
 
       background-color: #060262;
@@ -264,6 +313,10 @@
       touch-action: manipulation;
       -ms-touch-action: manipulation;
       cursor: pointer;
+      height: 100%;
+
+      font-family: Poppins, sans-serif;
+      font-weight: 400;
     }
   }
 
@@ -296,55 +349,89 @@
     }
   }
 
-  .jssocials-shares {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .jssocials-share {
-
-      margin: 0 15px;
 
 
-    }
+  &#modal-referral {
+    .micromodal__content {
+      justify-content: space-around;
+      align-items: center;
+      margin: 10px 30px;
 
-    .jssocials-share-link {
-      border-radius: 50%;
-      background: #060262;
-      height: 45px;
-      width: 45px;
-      vertical-align: middle;
-      line-height: 0;
-      cursor: pointer;
+      font-weight: 500;
 
-      display: inline-flex;
-
-      i {
-        margin: auto;
-        font-size: 24px;
-        color: #fff;
+      .make-money {
       }
-    }
-  }
 
-  &#modal-signup {
+      .you-get {
+        font-weight: bold;
+      }
 
-    .micromodal__container {
-      >img {
-        display: none;
+      .refer_img{
+        flex: 2;
 
-        @media(min-width: 500px){
-          display: block;
+        img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
         }
       }
 
-      width: 85%;
+      .refer_copy {
+        flex: 4;
 
-      @media (min-width: 1048px){
-        width: 65%;
+        font-size: 25px;
       }
-      max-width: 800px;
     }
+
+    .micromodal__footer {
+      padding-top: 10px;
+
+      p {
+        text-align: center;
+        font-size: 22px;
+      }
+
+      .social-share {
+        .jssocials-shares {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .jssocials-share {
+
+            margin: 0 15px;
+
+
+          }
+
+          .jssocials-share-link {
+            border-radius: 50%;
+            background: #060262;
+            height: 65px;
+            width: 65px;
+            vertical-align: middle;
+            line-height: 0;
+            cursor: pointer;
+
+            display: inline-flex;
+
+            i {
+              margin: auto;
+              font-size: 30px;
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      .link-share {
+
+      }
+    }
+
+  }
+
+  &#modal-signup {
 
     .micromodal__header {
       text-align: center;

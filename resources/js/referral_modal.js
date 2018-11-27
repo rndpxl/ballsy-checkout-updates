@@ -18,7 +18,7 @@ class ReferralModal {
             shares: [{share: "facebook", logo: 'fab fa-facebook-f'}, {share: "twitter", logo: "fab fa-twitter"},{share:"email", logo: 'far fa-envelope'}]
         });
 
-        const $modal = $('#modal-1.micromodal');
+        const $modal = $('#modal-referral.micromodal');
 
         $modal.find('.copyable-text').html(referral_url);
         $modal.find('.copy-btn').data('clipboard-text', referral_url);
@@ -36,7 +36,7 @@ class ReferralModal {
 
 
 
-        MicroModal.show('modal-1');
+        MicroModal.show('modal-referral');
     }
 
     static showSignup(first_name, last_name, email, referral_url){

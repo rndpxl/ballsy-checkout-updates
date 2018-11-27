@@ -10,7 +10,7 @@
         </div>
 
         <div>
-            <button onclick="MicroModal.show('modal-1')">Show Referral Modal</button>
+            <button onclick="MicroModal.show('modal-referral')">Show Referral Modal</button>
         </div>
 
         <div>
@@ -25,9 +25,9 @@
 
         const referral_url = "http://i.refs.cc/kdruSz4v?u=1234";
 
-        // ReferralModal.showReferral(referral_url);
+        ReferralModal.showReferral(referral_url);
 
-        ReferralModal.showSignup('test@email.com', referral_url);
+        // ReferralModal.showSignup('test@email.com', referral_url);
     </script>
 
 @stop

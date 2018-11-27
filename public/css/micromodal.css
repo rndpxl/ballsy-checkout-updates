@@ -137,6 +137,27 @@
           box-shadow: black -3px 3px 20px;
 }
 
+.micromodal .micromodal__container {
+  width: 85%;
+  max-width: 800px;
+}
+
+.micromodal .micromodal__container > img {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .micromodal .micromodal__container > img {
+    display: block;
+  }
+}
+
+@media (min-width: 1048px) {
+  .micromodal .micromodal__container {
+    width: 65%;
+  }
+}
+
 .micromodal .micromodal__header {
   display: block;
   -webkit-box-pack: center;
@@ -150,6 +171,54 @@
 
 .micromodal .micromodal__header .micromodal__close:before {
   content: "\2715";
+}
+
+.micromodal .micromodal__header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.micromodal .micromodal__header .micromodal__title {
+  font-size: 6vw;
+}
+
+.micromodal .micromodal__header .micromodal__subtitle {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 4vw;
+}
+
+@media (min-width: 500px) {
+  .micromodal .micromodal__header .micromodal__title {
+    font-size: 4.3vw;
+  }
+
+  .micromodal .micromodal__header .micromodal__subtitle {
+    margin: 0;
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .micromodal .micromodal__header .micromodal__title {
+    font-size: 3.5vw;
+  }
+
+  .micromodal .micromodal__header .micromodal__subtitle {
+    margin: 0;
+    font-size: 2.4vw;
+  }
+}
+
+@media (min-width: 1250px) {
+  .micromodal .micromodal__header .micromodal__title {
+    font-size: 35px;
+  }
+
+  .micromodal .micromodal__header .micromodal__subtitle {
+    margin: 0;
+    font-size: 28px;
+  }
 }
 
 .micromodal .micromodal__title {
@@ -196,28 +265,15 @@
   padding: 0 40px;
 }
 
-.micromodal .micromodal__content .make-money {
-  font-weight: bold;
-}
-
-.micromodal .micromodal__content .refer_img img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-}
-
 .micromodal .micromodal__footer {
   padding: 30px 40px;
   background: #EEE;
 }
 
 .micromodal .micromodal__footer .referral-link {
+  padding: 0 0 0 15px;
   margin: 0 40px 10px 40px;
-}
-
-.micromodal .micromodal__footer .referral-explanation {
-  text-align: center;
-  margin: 30px 20px 40px 20px;
+  height: 60px;
 }
 
 .micromodal .micromodal__btn {
@@ -314,8 +370,7 @@
 }
 
 .micromodal .copyable-text-component .copyable-text {
-  font-family: 'Space Mono';
-  font-size: 14px;
+  font-size: 20px;
   color: #2C2A2A;
   margin-top: auto;
   margin-bottom: auto;
@@ -334,9 +389,8 @@
   -moz-user-select: none;
   -ms-user-select: none;
       user-select: none;
-  font-size: 14px;
-  font-weight: 300;
-  border-radius: 5px;
+  font-size: 20px;
+  border-radius: 0 5px 5px 0;
   padding: 10px 20px;
   background-color: #060262;
   border-color: #060262 !important;
@@ -344,6 +398,9 @@
   touch-action: manipulation;
   -ms-touch-action: manipulation;
   cursor: pointer;
+  height: 100%;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
 }
 
 .micromodal .social-buttons-container {
@@ -375,7 +432,49 @@
   color: #fff;
 }
 
-.micromodal .jssocials-shares {
+.micromodal#modal-referral .micromodal__content {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 30px;
+  font-weight: 500;
+}
+
+.micromodal#modal-referral .micromodal__content .you-get {
+  font-weight: bold;
+}
+
+.micromodal#modal-referral .micromodal__content .refer_img {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.micromodal#modal-referral .micromodal__content .refer_img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.micromodal#modal-referral .micromodal__content .refer_copy {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  font-size: 25px;
+}
+
+.micromodal#modal-referral .micromodal__footer {
+  padding-top: 10px;
+}
+
+.micromodal#modal-referral .micromodal__footer p {
+  text-align: center;
+  font-size: 22px;
+}
+
+.micromodal#modal-referral .micromodal__footer .social-share .jssocials-shares {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,15 +486,15 @@
           align-items: center;
 }
 
-.micromodal .jssocials-shares .jssocials-share {
+.micromodal#modal-referral .micromodal__footer .social-share .jssocials-shares .jssocials-share {
   margin: 0 15px;
 }
 
-.micromodal .jssocials-shares .jssocials-share-link {
+.micromodal#modal-referral .micromodal__footer .social-share .jssocials-shares .jssocials-share-link {
   border-radius: 50%;
   background: #060262;
-  height: 45px;
-  width: 45px;
+  height: 65px;
+  width: 65px;
   vertical-align: middle;
   line-height: 0;
   cursor: pointer;
@@ -404,31 +503,10 @@
   display: inline-flex;
 }
 
-.micromodal .jssocials-shares .jssocials-share-link i {
+.micromodal#modal-referral .micromodal__footer .social-share .jssocials-shares .jssocials-share-link i {
   margin: auto;
-  font-size: 24px;
+  font-size: 30px;
   color: #fff;
-}
-
-.micromodal#modal-signup .micromodal__container {
-  width: 85%;
-  max-width: 800px;
-}
-
-.micromodal#modal-signup .micromodal__container > img {
-  display: none;
-}
-
-@media (min-width: 500px) {
-  .micromodal#modal-signup .micromodal__container > img {
-    display: block;
-  }
-}
-
-@media (min-width: 1048px) {
-  .micromodal#modal-signup .micromodal__container {
-    width: 65%;
-  }
 }
 
 .micromodal#modal-signup .micromodal__header {

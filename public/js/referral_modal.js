@@ -109,7 +109,7 @@ var ReferralModal = function () {
                 shares: [{ share: "facebook", logo: 'fab fa-facebook-f' }, { share: "twitter", logo: "fab fa-twitter" }, { share: "email", logo: 'far fa-envelope' }]
             });
 
-            var $modal = $('#modal-1.micromodal');
+            var $modal = $('#modal-referral.micromodal');
 
             $modal.find('.copyable-text').html(referral_url);
             $modal.find('.copy-btn').data('clipboard-text', referral_url);
@@ -125,7 +125,7 @@ var ReferralModal = function () {
                 }, 1000);
             });
 
-            __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-1');
+            __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-referral');
         }
     }, {
         key: "showSignup",
