@@ -27,8 +27,8 @@ class CustomerController extends Controller
             $prefix = 'customer.';
         }
         $customerData['email'] = $r->input($prefix . 'email');
-        $customerData['first_name'] = $r->input($prefix . 'first_name');
-        $customerData['last_name'] = $r->input($prefix . 'last_name');
+//        $customerData['first_name'] = $r->input($prefix . 'first_name');
+//        $customerData['last_name'] = $r->input($prefix . 'last_name');
         $customerData['password'] = $r->input($prefix . 'password');
         $customerData['password_confirmation'] = $r->input($prefix . 'password');
         $customerData['send_email_welcome'] = FALSE;
@@ -51,9 +51,11 @@ class CustomerController extends Controller
         $method = 'POST';
         $url = '/customers.json';
         $customerId = $r->input($prefix . 'id');
+        $data = [ 'customer' => $customerData ];
         if($customerId){
-            $method = 'PUT';
-            $url = '/customers/' . $customerId . '.json';
+            $method = 'POST';
+            $url = '/customers/' . $customerId . '/send_invite.json';
+            $data = ['customer_invite' => ''];
         }
 
         try
@@ -61,7 +63,7 @@ class CustomerController extends Controller
             $customer = $api->call([
                 'URL' => $url,
                 'METHOD' => $method,
-                'DATA' => [ 'customer' => $customerData ],
+                'DATA' => $data,
                 'ALLDATA' => TRUE,
                 'FAILONERROR' => FALSE
             ]);
@@ -73,7 +75,8 @@ class CustomerController extends Controller
                 ->json([ 'status' => FALSE, 'message' => $error ])
                 ->withCallback($r->input('callback'));
         }
-        if (!$customer || !property_exists($customer, 'customer'))
+
+        if (!$customer || (!property_exists($customer, 'customer') && !property_exists($customer, 'customer_invite')))
         {
             if (property_exists($customer, 'errors'))
             {
