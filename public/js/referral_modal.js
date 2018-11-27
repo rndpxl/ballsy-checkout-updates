@@ -122,7 +122,7 @@ var ReferralModal = function () {
                 $button.text('Copied!');
                 setTimeout(function () {
                     $button.text('Copy');
-                }, 1000);
+                }, 5000);
             });
 
             __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-referral');

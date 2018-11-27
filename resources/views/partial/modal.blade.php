@@ -3,7 +3,7 @@
         <div class="micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
             <header class="micromodal__header">
                 <h2 class="micromodal__title" id="modal-1-title">
-                    Friends don't let friends have funky 🌰🌰s
+                    Friends don't let friends have funky <span class="nuts">🌰🌰s</span>
                 </h2>
                 <button class="micromodal__close" aria-label="Close modal" data-micromodal-close></button>
             </header>

@@ -31,7 +31,7 @@ class ReferralModal {
             $button.text('Copied!');
             setTimeout(()=>{
                 $button.text('Copy');
-            }, 1000)
+            }, 5000)
         });
 
 

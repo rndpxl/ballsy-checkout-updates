@@ -154,7 +154,7 @@
 
 @media (min-width: 1048px) {
   .micromodal .micromodal__container {
-    width: 65%;
+    width: 75%;
   }
 }
 
@@ -432,14 +432,46 @@
   color: #fff;
 }
 
+.micromodal#modal-referral .micromodal__title {
+  font-size: 35px;
+}
+
+.micromodal#modal-referral .micromodal__title .nuts {
+  white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  .micromodal#modal-referral .micromodal__title {
+    font-size: 4.3vw;
+  }
+
+  .micromodal#modal-referral .micromodal__subtitle {
+    margin: 0;
+    font-size: 3vw;
+  }
+}
+
 .micromodal#modal-referral .micromodal__content {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 10px 30px;
   font-weight: 500;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 850px) {
+  .micromodal#modal-referral .micromodal__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 10px 30px;
+  }
 }
 
 .micromodal#modal-referral .micromodal__content .you-get {
@@ -453,8 +485,8 @@
 }
 
 .micromodal#modal-referral .micromodal__content .refer_img img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
 }
 
@@ -462,16 +494,36 @@
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
-  font-size: 25px;
+  font-size: 15px;
+}
+
+@media (min-width: 460px) {
+  .micromodal#modal-referral .micromodal__content .refer_copy {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 615px) {
+  .micromodal#modal-referral .micromodal__content .refer_copy {
+    font-size: 25px;
+  }
 }
 
 .micromodal#modal-referral .micromodal__footer {
   padding-top: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .micromodal#modal-referral .micromodal__footer p {
   text-align: center;
-  font-size: 22px;
+  font-size: 15px;
+}
+
+@media (min-width: 615px) {
+  .micromodal#modal-referral .micromodal__footer p {
+    font-size: 22px;
+  }
 }
 
 .micromodal#modal-referral .micromodal__footer .social-share .jssocials-shares {
@@ -507,6 +559,11 @@
   margin: auto;
   font-size: 30px;
   color: #fff;
+}
+
+.micromodal#modal-referral .micromodal__footer .link-share {
+  max-width: 650px;
+  margin: auto;
 }
 
 .micromodal#modal-signup .micromodal__header {

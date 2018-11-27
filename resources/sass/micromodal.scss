@@ -86,7 +86,7 @@
     width: 85%;
 
     @media (min-width: 1048px){
-      width: 65%;
+      width: 75%;
     }
     max-width: 800px;
   }
@@ -352,12 +352,38 @@
 
 
   &#modal-referral {
+    .micromodal__title {
+      font-size: 35px;
+
+      .nuts {
+        white-space: nowrap;
+      }
+    }
+
+    @media(max-width: 500px) {
+
+      .micromodal__title {
+        font-size: 4.3vw;
+      }
+
+      .micromodal__subtitle {
+        margin: 0;
+        font-size: 3vw;
+      }
+    }
+
     .micromodal__content {
       justify-content: space-around;
       align-items: center;
-      margin: 10px 30px;
 
       font-weight: 500;
+      flex-direction: column;
+
+      @media (min-width: 850px){
+        flex-direction: row;
+        margin: 10px 30px;
+      }
+
 
       .make-money {
       }
@@ -370,8 +396,8 @@
         flex: 2;
 
         img {
-          width: 120px;
-          height: 120px;
+          width: 140px;
+          height: 140px;
           border-radius: 50%;
         }
       }
@@ -379,16 +405,34 @@
       .refer_copy {
         flex: 4;
 
-        font-size: 25px;
+        font-size: 15px;
+
+        @media(min-width: 460px) {
+          font-size: 20px;
+        }
+
+        @media(min-width: 615px) {
+          font-size: 25px;
+        }
       }
     }
 
     .micromodal__footer {
       padding-top: 10px;
+      padding-left: 0;
+      padding-right: 0;
+
+      @media(min-width: 615px){
+        //padding-right:
+      }
 
       p {
         text-align: center;
-        font-size: 22px;
+        font-size: 15px;
+
+        @media(min-width: 615px) {
+          font-size: 22px;
+        }
       }
 
       .social-share {
@@ -426,6 +470,9 @@
 
       .link-share {
 
+
+        max-width: 650px;
+        margin: auto;
       }
     }
 
