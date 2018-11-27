@@ -602,6 +602,7 @@
 @media (min-width: 768px) {
   .micromodal#modal-signup .micromodal__header .micromodal__title {
     font-size: 3.5vw;
+    line-height: 1.5;
   }
 
   .micromodal#modal-signup .micromodal__header .micromodal__subtitle {
