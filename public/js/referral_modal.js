@@ -84,7 +84,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
-var API_URL = Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).APP_URL || 'http://localhost:8000';
+var API_URL = 'https://ballsy.blue-hat.tech';
 
 var ReferralModal = function () {
     function ReferralModal() {

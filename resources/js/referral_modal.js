@@ -1,7 +1,7 @@
 import MicroModal from "micromodal";
 
 
-let API_URL = process.env.APP_URL || 'http://localhost:8000';
+let API_URL = 'https://ballsy.blue-hat.tech';
 
 class ReferralModal {
     static showReferral(referral_url) {
