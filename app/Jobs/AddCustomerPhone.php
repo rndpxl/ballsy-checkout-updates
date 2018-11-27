@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Storefront;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -9,26 +10,24 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Redis;
 
-use App\Models\Storefront;
-
-class AddCustomerTag implements ShouldQueue
+class AddCustomerPhone implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     private $customerId;
     private $storefrontId;
-    private $tag;
+    private $phone;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($storefrontId = 0, $customerId = 0, $tag = '')
+    public function __construct($storefrontId = 0, $customerId = 0, $phone = '')
     {
         $this->customerId = $customerId;
         $this->storefrontId = $storefrontId;
-        $this->tag = $tag;
+        $this->phone = $phone;
     }
 
     /**
@@ -47,10 +46,8 @@ class AddCustomerTag implements ShouldQueue
 
                 if($customer) {
 
-                    $tags = $customer['tags'];
-
                     $result = $shopify->Customer($this->customerId)->put([
-                        'tags' => $tags . ", " . $this->tag
+                        'phone' => $this->phone
                     ]);
 
                     return $result;

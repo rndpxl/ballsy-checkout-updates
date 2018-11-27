@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\AddCustomerPhone;
 use App\Jobs\AddCustomerTag;
 use App\Models\Storefront;
 use Illuminate\Http\Request;
@@ -104,6 +105,16 @@ class CustomerController extends Controller
         $storefront = Storefront::first();
 
         AddCustomerTag::dispatch($storefront->id, $customerId, $tag);
+
+        info($r->input());
+
+        if($r->has('phone')){
+            info('has phone number');
+
+            $phone = $r->input('phone');
+
+            AddCustomerPhone::dispatch($storefront->id, $customerId, $phone);
+        }
 
         return response()->json([
             'success' => true
