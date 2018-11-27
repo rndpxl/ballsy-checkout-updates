@@ -54,6 +54,10 @@ class ReferralModal {
         $modal.find('#create_customer').on('submit', (e) => {
             e.preventDefault();
 
+            $modal.find('.btn__content').css('opacity', 0);
+            $modal.find('.btn__spinner').css('opacity', 1);
+
+
             $.post({
                 url: API_URL + "/customer-signup",
                 data: $form.serialize(),
@@ -61,6 +65,9 @@ class ReferralModal {
                     console.log(result)
                     if(!result.status){
                         $modal.find('.errors').html(result.message);
+
+                        $modal.find('.btn__content').css('opacity', 1);
+                        $modal.find('.btn__spinner').css('opacity', 0);
                     } else {
                         MicroModal.close('#modal-signup');
 
@@ -69,7 +76,8 @@ class ReferralModal {
                     }
                 },
                 error: (error) => {
-
+                    $modal.find('.btn__content').css('opacity', 1);
+                    $modal.find('.btn__spinner').css('opacity', 0);
                 }
             })
         });

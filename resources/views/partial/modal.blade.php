@@ -88,7 +88,10 @@
                     </div>
 
                     <div class="action_bottom">
-                        <input class="btn action_button" type="submit" value="Get Rewarded">
+                        <button class="btn action_button" type="submit" value="Get Rewarded">
+                            <span class="btn__content">Get Rewarded</span>
+                            <i class="btn__spinner fas fa-circle-notch fa-spin"></i>
+                        </button>
                     </div>
 
                 </form>

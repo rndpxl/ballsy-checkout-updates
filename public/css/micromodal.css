@@ -659,6 +659,13 @@
   width: 100%;
 }
 
+.micromodal#modal-signup .micromodal__content form .errors {
+  margin: 10px 0;
+  color: red;
+  border: 1px solid red;
+  padding: 10px;
+}
+
 @media (min-width: 768px) {
   .micromodal#modal-signup .micromodal__content form {
     width: 48vw;
@@ -708,5 +715,21 @@
   font-size: 20px;
   text-transform: uppercase;
   padding: 12px 26px;
+}
+
+.micromodal#modal-signup .micromodal__content .btn__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+  width: 20px;
+  height: 20px;
 }
 

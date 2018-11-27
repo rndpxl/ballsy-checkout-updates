@@ -145,6 +145,9 @@ var ReferralModal = function () {
             $modal.find('#create_customer').on('submit', function (e) {
                 e.preventDefault();
 
+                $modal.find('.btn__content').css('opacity', 0);
+                $modal.find('.btn__spinner').css('opacity', 1);
+
                 $.post({
                     url: API_URL + "/customer-signup",
                     data: $form.serialize(),
@@ -152,13 +155,19 @@ var ReferralModal = function () {
                         console.log(result);
                         if (!result.status) {
                             $modal.find('.errors').html(result.message);
+
+                            $modal.find('.btn__content').css('opacity', 1);
+                            $modal.find('.btn__spinner').css('opacity', 0);
                         } else {
                             __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].close('#modal-signup');
 
                             ReferralModal.showReferral(referral_url);
                         }
                     },
-                    error: function error(_error) {}
+                    error: function error(_error) {
+                        $modal.find('.btn__content').css('opacity', 1);
+                        $modal.find('.btn__spinner').css('opacity', 0);
+                    }
                 });
             });
 

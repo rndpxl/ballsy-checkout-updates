@@ -562,6 +562,13 @@
       form {
         width: 100%;
 
+        .errors {
+          margin: 10px 0;
+          color: red;
+          border: 1px solid red;
+          padding: 10px;
+        }
+
         @media(min-width: 768px) {
           width: 48vw;
         }
@@ -602,6 +609,24 @@
           text-transform: uppercase;
           padding: 12px 26px;
         }
+      }
+
+      .btn__spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -10px;
+        margin-left: -10px;
+        -webkit-transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+
+        display: inline-block;
+        vertical-align: middle;
+        fill: currentColor;
+
+        width: 20px;
+        height: 20px;
       }
 
     }
