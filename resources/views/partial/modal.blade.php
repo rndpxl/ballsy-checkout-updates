@@ -73,9 +73,7 @@
                     <input type="hidden" name="utf8" value="✓">
                     <input name="store" type="hidden" value="ball-wash.myshopify.com"/>
 
-                    <div class="errors">
-
-                    </div>
+                    <div class="errors"></div>
 
                     <div id="email" class="clearfix large_form">
                         <label for="email" class="login">Email</label>

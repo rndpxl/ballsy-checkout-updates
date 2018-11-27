@@ -581,6 +581,7 @@
   margin-top: 10px;
   margin-bottom: 0;
   font-size: 4vw;
+  font-weight: bold;
 }
 
 @media (min-width: 500px) {
@@ -664,6 +665,12 @@
   color: red;
   border: 1px solid red;
   padding: 10px;
+}
+
+.micromodal#modal-signup .micromodal__content form .errors:empty {
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
