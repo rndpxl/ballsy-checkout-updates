@@ -489,6 +489,8 @@
       .micromodal__title {
         font-size: 6vw;
         font-family: Poppins, sans-serif;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
       }
 
       .micromodal__subtitle {
@@ -498,6 +500,7 @@
         font-size: 4vw;
         font-weight: bold;
         color: black;
+        line-height: normal;
       }
 
       @media(min-width: 500px) {
@@ -547,6 +550,8 @@
 
       p {
         text-align: center;
+        margin-top: 1em;
+        margin-bottom: 1em;
 
         font-size: 3vw;
 
