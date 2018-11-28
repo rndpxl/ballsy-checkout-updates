@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Jobs\AddCustomerPhone;
 use App\Jobs\AddCustomerTag;
+use App\Jobs\UpdateCustomer;
 use App\Models\Storefront;
 use Illuminate\Http\Request;
 
@@ -51,13 +52,7 @@ class CustomerController extends Controller
         $api = $storefront->getShopifyConnection();
         $method = 'POST';
         $url = '/customers.json';
-        $customerId = $r->input($prefix . 'id');
         $data = [ 'customer' => $customerData ];
-        if($customerId){
-            $method = 'POST';
-            $url = '/customers/' . $customerId . '/send_invite.json';
-            $data = ['customer_invite' => ''];
-        }
 
         try
         {
