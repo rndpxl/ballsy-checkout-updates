@@ -752,7 +752,13 @@
 }
 
 .micromodal#modal-signup-complete .micromodal__container {
-  width: 375px;
+  width: 90%;
+}
+
+@media (min-width: 500px) {
+  .micromodal#modal-signup-complete .micromodal__container {
+    width: 450px;
+  }
 }
 
 .micromodal#modal-signup-complete .micromodal__content {
@@ -769,6 +775,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #212121;
 }
 
 .micromodal#modal-signup-complete .micromodal__content img {
@@ -776,17 +783,47 @@
   height: 180px;
 }
 
+@media (min-width: 500px) {
+  .micromodal#modal-signup-complete .micromodal__content img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
 .micromodal#modal-signup-complete .micromodal__content p {
   font-weight: bold;
-  font-size: 28px;
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 500px) {
+  .micromodal#modal-signup-complete .micromodal__content p {
+    font-size: 34px;
+  }
 }
 
 .micromodal#modal-signup-complete .micromodal__footer {
   padding: 20px 45px;
+  color: #212121;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .micromodal#modal-signup-complete .micromodal__footer p {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 15px;
+}
+
+@media (min-width: 500px) {
+  .micromodal#modal-signup-complete .micromodal__footer p {
+    font-size: 20px;
+  }
 }
 
