@@ -1,3 +1,17 @@
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="https://ballsy.blue-hat.tech/css/micromodal.css"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins:500,700" rel="stylesheet">
+
+
+<small class="sms-opt-in-text" style="padding: 10px 5px; margin-top: 10px; display:none;">
+    Providing mobile number opts you into our most exclusive sms promotions, discounts and more!
+</small>
+
+<!-- Modals -->
+
 <div class="micromodal micromodal-slide" id="modal-referral" aria-hidden="true">
     <div class="micromodal__overlay" tabindex="-1" data-micromodal-close>
         <div class="micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
@@ -73,7 +87,7 @@
                 <form method="post" action="/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer">
                     <input type="hidden" name="utf8" value="✓">
                     <input name="store" type="hidden" value="ball-wash.myshopify.com"/>
-                    <input type="hidden" name="customer[id]" value=""/>
+                    <input type="hidden" name="customer[id]" value="{{checkout.customer.id}}"/>
 
                     <div class="errors"></div>
 
@@ -83,8 +97,8 @@
                     </div>
 
                     {{--<div id="password" class="clearfix large_form">--}}
-                        {{--<label for="password" class="login">Password</label>--}}
-                        {{--<input type="password" value="" name="customer[password]" id="password" class="large password" size="30">--}}
+                    {{--<label for="password" class="login">Password</label>--}}
+                    {{--<input type="password" value="" name="customer[password]" id="password" class="large password" size="30">--}}
                     {{--</div>--}}
 
                     <div class="action_bottom">
@@ -114,7 +128,7 @@
             </header>
             <main class="micromodal__content" id="modal-1-content">
 
-                <img class="vib-image" src="/img/VIB.png"/>
+                <img class="vib-image" src="https://ballsy.blue-hat.tech/img/VIB.png"/>
 
                 <p>Incrediball!</p>
 
@@ -130,3 +144,85 @@
         </div>
     </div>
 </div>
+
+<!-- End Modals -->
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+
+
+
+<script src="https://ballsy.blue-hat.tech/js/referral_modal.js"></script>
+
+
+<script>
+    window.customer_has_account = !!{{checkout.customer.has_account}};
+</script>
+
+{% if checkout.customer %}
+    {% assign digest = checkout.customer.id | append: shop.metafields['sweettooth'].api_secret | md5 %}
+    {% assign customerId = checkout.customer.id %}
+
+{% endif %}
+
+<script type="text/javascript" async="" src="https://cdn.sweettooth.io/assets/storefront.js?shop=ball-wash.myshopify.com"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.sweettooth.io/assets/storefront.css?v=1">
+
+<div class="sweettooth-init"
+     data-channel-api-key="{{ shop.metafields['sweettooth'].api_key }}"
+     data-external-customer-id="{{ customerId }}"
+     data-customer-auth-digest="{{ digest }}"
+></div>
+
+
+<script>
+    const customer_tags = {{checkout.customer.tags | json}};
+    const customer_id = "{{checkout.customer.id}}";
+    const sms_active_tag = "SMS_Active";
+    const app_domain = "https://ballsy.blue-hat.tech";
+    const customer_phone = "{{checkout.customer.phone}}";
+    const checkout_address = {{checkout.shipping_address | json}};
+
+
+    if(Shopify.Checkout.step === "contact_information"){
+
+
+        $(document).ready(() => {
+            $('#checkout_shipping_address_phone').after($('.sms-opt-in-text').css('display','block'));
+        });
+    }
+
+    if(Shopify.Checkout.step === "shipping_method"){
+
+        if(checkout_address.phone && (customer_tags.indexOf(sms_active_tag) < 0 || customer_phone != checkout_address.phone)){
+            $.ajax({
+                type: 'PUT',
+                url: app_domain + '/customer/'+customer_id+'/add-tag/'+sms_active_tag+'?phone='+checkout_address.phone
+            })
+        }
+    }
+
+    if(Shopify.Checkout.step === "thank_you" || Shopify.Checkout.step === undefined){
+
+
+
+        $(document).on('sweettooth-initialized', function() {
+
+            console.log('referral url:' + SweetTooth.customer.referral_url)
+
+            const referral_url = SweetTooth.customer.referral_url;
+
+            if(window.customer_has_account){
+                ReferralModal.showReferral(referral_url);
+            } else {
+                ReferralModal.showSignup("{{checkout.customer.email}}", referral_url);
+            }
+
+        })
+
+    }
+
+</script>
