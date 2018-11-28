@@ -71,7 +71,7 @@ class ReferralModal {
                     } else {
                         MicroModal.close('#modal-signup');
 
-                        ReferralModal.showReferral(referral_url);
+                        ReferralModal.showConfirmation();
 
                     }
                 },

@@ -161,7 +161,7 @@ var ReferralModal = function () {
                         } else {
                             __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].close('#modal-signup');
 
-                            ReferralModal.showReferral(referral_url);
+                            ReferralModal.showConfirmation();
                         }
                     },
                     error: function error(_error) {
