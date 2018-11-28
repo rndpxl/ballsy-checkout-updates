@@ -97,6 +97,70 @@ class CustomerController extends Controller
             ->json([ 'status' => TRUE ]);
     }
 
+    public function sendAccountActivation(Request $r){
+        if(!$r->has('store') || Storefront::where('shop_domain', $r->input('store'))->first() == null){
+            return response()
+                ->json([ 'status' => FALSE, 'message' => 'Invalid storefront installation' ])
+                ->withCallback($r->input('callback'));
+        }
+
+        $storefront = Storefront::where('shop_domain', $r->input('store'))->first();
+
+
+        $prefix = '';
+        if ($r->has('customer'))
+        {
+            $prefix = 'customer.';
+        }
+
+        $customerId = $r->input($prefix . 'id');
+
+        $method = 'POST';
+        $url = '/customers/' . $customerId . '/send_invite.json';
+        $data = ['customer_invite' => ''];
+        $api = $storefront->getShopifyConnection();
+
+        // Default
+        $error = 'An unknown error has occurred, please try again.';
+        try
+        {
+            $customerInvite = $api->call([
+                'URL' => $url,
+                'METHOD' => $method,
+                'DATA' => $data,
+                'ALLDATA' => TRUE,
+                'FAILONERROR' => FALSE
+            ]);
+        }
+        catch (\Exception $e)
+        {
+            Log::error($e->getMessage());
+            return response()
+                ->json([ 'status' => FALSE, 'message' => $error ])
+                ->withCallback($r->input('callback'));
+        }
+
+        if (!property_exists($customerInvite, 'customer_invite'))
+        {
+            if (property_exists($customerInvite, 'errors'))
+            {
+                $error = 'Could not create Account (';
+                foreach((array) $customerInvite->errors as $field => $reason)
+                {
+                    $error .= ucfirst($field) . ' ' . array_shift($reason) . ', ';
+                }
+                $error = trim($error, ', ') . ').';
+            }
+            return response()
+                ->json([ 'status' => FALSE, 'message' => $error ])
+                ->withCallback($r->input('callback'));
+        }
+
+        return response()
+            ->json([ 'status' => TRUE ]);
+
+    }
+
     public function addTag(Request $r, $customerId, $tag){
         $origin = request()->headers->get('origin');
 

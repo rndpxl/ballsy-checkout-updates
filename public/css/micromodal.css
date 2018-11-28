@@ -749,3 +749,42 @@
   height: 20px;
 }
 
+.micromodal#modal-signup-complete .micromodal__container {
+  width: 375px;
+}
+
+.micromodal#modal-signup-complete .micromodal__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.micromodal#modal-signup-complete .micromodal__content img {
+  width: 180px;
+  height: 180px;
+}
+
+.micromodal#modal-signup-complete .micromodal__content p {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.micromodal#modal-signup-complete .micromodal__footer {
+  padding: 20px 45px;
+}
+
+.micromodal#modal-signup-complete .micromodal__footer p {
+  font-weight: 500;
+  font-size: 20px;
+}
+

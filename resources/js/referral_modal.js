@@ -59,7 +59,7 @@ class ReferralModal {
 
 
             $.post({
-                url: API_URL + "/customer-signup",
+                url: API_URL + "/customer-activate",
                 data: $form.serialize(),
                 success: (result) => {
                     console.log(result)
@@ -84,6 +84,11 @@ class ReferralModal {
 
 
         MicroModal.show('modal-signup');
+    }
+
+    static showConfirmation(){
+
+        MicroModal.show('modal-signup-complete');
     }
 
 

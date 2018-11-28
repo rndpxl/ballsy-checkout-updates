@@ -67,7 +67,7 @@
             </header>
             <main class="micromodal__content" id="modal-1-content">
 
-                <p>To create your account just choose a password.</p>
+                <p>Follow the link below to activate your account.</p>
 
                 <form method="post" action="/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer">
                     <input type="hidden" name="utf8" value="✓">
@@ -76,19 +76,19 @@
 
                     <div class="errors"></div>
 
-                    <div id="email" class="clearfix large_form">
-                        <label for="email" class="login">Email</label>
-                        <input type="email" value="" name="customer[email]" id="email" class="large" size="30">
-                    </div>
+                    {{--<div id="email" class="clearfix large_form">--}}
+                        {{--<label for="email" class="login">Email</label>--}}
+                        {{--<input type="email" value="" name="customer[email]" id="email" class="large" size="30">--}}
+                    {{--</div>--}}
 
-                    <div id="password" class="clearfix large_form">
-                        <label for="password" class="login">Password</label>
-                        <input type="password" value="" name="customer[password]" id="password" class="large password" size="30">
-                    </div>
+                    {{--<div id="password" class="clearfix large_form">--}}
+                        {{--<label for="password" class="login">Password</label>--}}
+                        {{--<input type="password" value="" name="customer[password]" id="password" class="large password" size="30">--}}
+                    {{--</div>--}}
 
                     <div class="action_bottom">
                         <button class="btn action_button" type="submit" value="Get Rewarded">
-                            <span class="btn__content">Get Rewarded</span>
+                            <span class="btn__content">Activate!</span>
                             <i class="btn__spinner fas fa-circle-notch fa-spin"></i>
                         </button>
                     </div>
@@ -98,6 +98,33 @@
             </main>
             <footer class="micromodal__footer">
 
+            </footer>
+        </div>
+    </div>
+</div>
+
+<div class="micromodal micromodal-slide" id="modal-signup-complete" aria-hidden="true">
+    <div class="micromodal__overlay" tabindex="-1" data-micromodal-close>
+        <div class="micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+
+            <header class="micromodal__header">
+                <button class="micromodal__close" aria-label="Close modal" data-micromodal-close></button>
+
+            </header>
+            <main class="micromodal__content" id="modal-1-content">
+
+                <img class="vib-image" src="/img/VIB.png"/>
+
+                <p>Incrediball!</p>
+
+            </main>
+            <footer class="micromodal__footer">
+                <p>
+                    You’re one step away from
+                    being a Baller. Please check
+                    your email to activate your
+                    account.
+                </p>
             </footer>
         </div>
     </div>

@@ -647,4 +647,37 @@
 
     }
   }
+
+  &#modal-signup-complete {
+    .micromodal__container {
+      width: 375px;
+    }
+
+    .micromodal__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 180px;
+        height: 180px;
+      }
+
+      p {
+        font-weight: bold;
+        font-size: 28px;
+      }
+    }
+
+    .micromodal__footer {
+      padding: 20px 45px;
+
+      p {
+        font-weight: 500;
+        font-size: 20px;
+      }
+
+    }
+  }
 }

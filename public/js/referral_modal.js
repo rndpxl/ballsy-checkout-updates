@@ -149,7 +149,7 @@ var ReferralModal = function () {
                 $modal.find('.btn__spinner').css('opacity', 1);
 
                 $.post({
-                    url: API_URL + "/customer-signup",
+                    url: API_URL + "/customer-activate",
                     data: $form.serialize(),
                     success: function success(result) {
                         console.log(result);
@@ -172,6 +172,12 @@ var ReferralModal = function () {
             });
 
             __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-signup');
+        }
+    }, {
+        key: "showConfirmation",
+        value: function showConfirmation() {
+
+            __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-signup-complete');
         }
     }, {
         key: "copyTextToClipBoard",

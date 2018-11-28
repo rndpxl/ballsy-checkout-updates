@@ -27,5 +27,6 @@ if (env('APP_ENV') !== 'local')
 Route::middleware($middlewareRoutes)->group(function()
 {
     Route::post('/customer-signup', 'CustomerController@signup');
+    Route::post('/customer-activate', 'CustomerController@sendAccountActivation');
     Route::put('/customer/{customerId}/add-tag/{tag}', 'CustomerController@addTag');
 });

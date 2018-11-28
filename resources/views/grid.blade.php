@@ -23,6 +23,10 @@
             <button onclick="ReferralModal.showSignup('test@email.com', referral_url)">Show Signup Modal</button>
         </div>
 
+        <div>
+            <button onclick="ReferralModal.showConfirmation()">Show Confirmation</button>
+        </div>
+
     </div>
 
     @include('partial/modal')
@@ -34,6 +38,8 @@
         // ReferralModal.showReferral(referral_url);
 
         ReferralModal.showSignup('test@email.com', referral_url);
+
+        // ReferralModal.showConfirmation();
     </script>
 
 @stop
