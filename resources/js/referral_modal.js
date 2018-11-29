@@ -2,6 +2,7 @@ import MicroModal from "micromodal";
 
 
 let API_URL = 'https://ballsy.blue-hat.tech';
+const MODAL_DELAY = 2475;
 
 class ReferralModal {
     static showReferral(referral_url) {
@@ -43,7 +44,9 @@ class ReferralModal {
             }, 5000)
         });
 
-        MicroModal.show('modal-referral');
+        setTimeout(()=> {
+            MicroModal.show('modal-referral');
+        }, MODAL_DELAY);
     }
 
     static showSignup(email, referral_url){
@@ -95,8 +98,10 @@ class ReferralModal {
             })
         });
 
+        setTimeout(()=>{
+            MicroModal.show('modal-signup');
+        },MODAL_DELAY);
 
-        MicroModal.show('modal-signup');
     }
 
     static showConfirmation(){

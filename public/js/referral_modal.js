@@ -85,6 +85,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 var API_URL = 'https://ballsy.blue-hat.tech';
+var MODAL_DELAY = 2475;
 
 var ReferralModal = function () {
     function ReferralModal() {
@@ -131,7 +132,9 @@ var ReferralModal = function () {
                 }, 5000);
             });
 
-            __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-referral');
+            setTimeout(function () {
+                __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-referral');
+            }, MODAL_DELAY);
         }
     }, {
         key: "showSignup",
@@ -180,7 +183,9 @@ var ReferralModal = function () {
                 });
             });
 
-            __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-signup');
+            setTimeout(function () {
+                __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].show('modal-signup');
+            }, MODAL_DELAY);
         }
     }, {
         key: "showConfirmation",
