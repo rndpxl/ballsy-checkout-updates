@@ -743,6 +743,7 @@
   border-radius: 5px;
   font-size: 10px;
   font-weight: 600;
+  opacity: 1;
 }
 
 @media (min-width: 400px) {
