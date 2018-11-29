@@ -9,13 +9,22 @@ class ReferralModal {
             awaitCloseAnimation: true
         });
 
+        const shareMessage = "Friends, keep the funk off your junk! Click my link to buy and save $5 on your first purchase and I’ll get $5!";
+
         $("#share").jsSocials({
             showLabel: false,
             showCount: false,
             shareIn: "popup",
-            text: "$5 Off at Ballwash.com",
+            text: shareMessage,
             url: referral_url,
-            shares: [{share: "facebook", logo: 'fab fa-facebook-f'}, {share: "twitter", logo: "fab fa-twitter"},{share:"email", logo: 'far fa-envelope'}]
+            shares: [
+                {share: "facebook", logo: 'fab fa-facebook-f'},
+                {share: "twitter", logo: "fab fa-twitter"},
+                {
+                    share:"email",
+                    logo: 'far fa-envelope',
+                    shareUrl: `mailto:?subject=${encodeURI(shareMessage)}&body=${encodeURI(shareMessage + '\n\n' + referral_url)}`
+                }]
         });
 
         const $modal = $('#modal-referral.micromodal');
