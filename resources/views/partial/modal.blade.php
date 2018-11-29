@@ -60,7 +60,7 @@
 
                 <h2 class="micromodal__title" id="modal-1-title">
 
-                    Earn Free Products, Discounts and More!
+                    Earn Free Products, <span class="hide-on-mobile">Exclusive</span> Discounts and More!
                 </h2>
                 <h4 class="micromodal__subtitle">
                     Create a Ballsy rewards account.
