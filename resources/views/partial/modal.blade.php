@@ -73,7 +73,7 @@
                 <form method="post" action="/account" id="create_customer" accept-charset="UTF-8"><input type="hidden" name="form_type" value="create_customer">
                     <input type="hidden" name="utf8" value="✓">
                     <input name="store" type="hidden" value="ball-wash.myshopify.com"/>
-                    <input type="hidden" name="customer[id]" value=""/>
+                    <input type="hidden" name="customer[id]" value="898349269086"/>
 
                     <div class="errors"></div>
 

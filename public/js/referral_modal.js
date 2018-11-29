@@ -84,7 +84,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
-var API_URL = 'https://ballsy.blue-hat.tech';
+var API_URL = 'http://localhost:3000'; //'https://ballsy.blue-hat.tech';
 
 var ReferralModal = function () {
     function ReferralModal() {
@@ -151,6 +151,7 @@ var ReferralModal = function () {
             $modal.find('#create_customer').on('submit', function (e) {
                 e.preventDefault();
 
+                $modal.find('button.action_button').attr('disabled', 'disabled');
                 $modal.find('.btn__content').css('opacity', 0);
                 $modal.find('.btn__spinner').css('opacity', 1);
 
@@ -161,18 +162,20 @@ var ReferralModal = function () {
                         console.log(result);
                         if (!result.status) {
                             $modal.find('.errors').html(result.message);
-
-                            $modal.find('.btn__content').css('opacity', 1);
-                            $modal.find('.btn__spinner').css('opacity', 0);
                         } else {
                             __WEBPACK_IMPORTED_MODULE_0_micromodal__["a" /* default */].close('#modal-signup');
 
                             ReferralModal.showConfirmation();
                         }
+
+                        $modal.find('.btn__content').css('opacity', 1);
+                        $modal.find('.btn__spinner').css('opacity', 0);
+                        $modal.find('button.action_button').attr('disabled', false);
                     },
                     error: function error(_error) {
                         $modal.find('.btn__content').css('opacity', 1);
                         $modal.find('.btn__spinner').css('opacity', 0);
+                        $modal.find('button.action_button').attr('disabled', false);
                     }
                 });
             });
