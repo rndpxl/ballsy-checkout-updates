@@ -84,7 +84,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
-var API_URL = 'http://localhost:3000'; //'https://ballsy.blue-hat.tech';
+var API_URL = 'https://ballsy.blue-hat.tech';
 
 var ReferralModal = function () {
     function ReferralModal() {

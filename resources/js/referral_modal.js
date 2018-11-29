@@ -1,7 +1,7 @@
 import MicroModal from "micromodal";
 
 
-let API_URL = 'http://localhost:3000'//'https://ballsy.blue-hat.tech';
+let API_URL = 'https://ballsy.blue-hat.tech';
 
 class ReferralModal {
     static showReferral(referral_url) {
